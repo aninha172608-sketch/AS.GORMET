@@ -6,10 +6,10 @@
     <title>Cartão Fidelidade - A.S Gourmet</title>
     <style>
         :root {
-            --bg-color: #121212;
-            --card-bg: #1a1a1a;
-            --pink-main: #f3a3b7;
-            --pink-dark: #d47a91;
+            --bg-color: #0b0b0b;
+            --card-bg: #141414;
+            --pink-main: #e29fb0;
+            --pink-dark: #c58293;
             --text-white: #ffffff;
         }
 
@@ -38,57 +38,57 @@
             border: 2px solid var(--pink-main);
             border-radius: 15px;
             padding: 25px;
-            box-shadow: 0px 10px 25px rgba(243, 163, 183, 0.1);
+            box-shadow: 0px 10px 25px rgba(226, 159, 176, 0.1);
             text-align: center;
         }
 
         h1 {
-            font-size: 28px;
+            font-size: 32px;
             color: var(--pink-main);
             margin-bottom: 5px;
             font-family: 'Georgia', serif;
             letter-spacing: 2px;
+            font-style: italic;
         }
 
         .subtitle {
-            font-size: 14px;
+            font-size: 13px;
             color: #aaa;
             margin-bottom: 25px;
             text-transform: uppercase;
-            letter-spacing: 1px;
+            letter-spacing: 2px;
         }
 
-        /* Área dos Selos */
+        /* Área dos Selos inspirada no Cartão Físico */
         .grid-selos {
             display: flex;
             justify-content: space-between;
             margin-bottom: 30px;
-            gap: 10px;
+            gap: 8px;
         }
 
         .selo-espaco {
-            width: 65px;
-            height: 65px;
+            width: 70px;
+            height: 70px;
             border-radius: 50%;
-            border: 2px dashed var(--pink-main);
+            border: 2px solid var(--pink-main);
             display: flex;
             align-items: center;
             justify-content: center;
             position: relative;
-            background: #222;
+            background: #fffdfd;
             transition: all 0.5s ease;
         }
 
         .selo-ativo {
-            border: 2px solid var(--pink-main);
             background: var(--pink-main);
             box-shadow: 0 0 15px var(--pink-main);
             animation: popSelo 0.5s ease-in-out;
         }
 
         .logo-selo {
-            width: 80%;
-            height: 80%;
+            width: 75%;
+            height: 75%;
             display: none;
         }
 
@@ -97,8 +97,8 @@
         }
 
         .coracao-vazio {
-            color: #444;
-            font-size: 20px;
+            color: #e29fb0;
+            font-size: 24px;
         }
 
         .selo-ativo .coracao-vazio {
@@ -119,17 +119,18 @@
 
         label {
             display: block;
-            font-size: 12px;
+            font-size: 11px;
             color: var(--pink-main);
             margin-bottom: 5px;
             text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
         input {
             width: 100%;
             padding: 12px;
-            background: #222;
-            border: 1px solid #444;
+            background: #1c1c1c;
+            border: 1px solid #333;
             border-radius: 8px;
             color: white;
             font-size: 14px;
@@ -149,10 +150,12 @@
             border-radius: 8px;
             color: #121212;
             font-weight: bold;
-            font-size: 16px;
+            font-size: 15px;
             cursor: pointer;
             transition: 0.3s;
             margin-top: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
         button:hover {
@@ -165,10 +168,11 @@
             margin-top: 25px;
             color: var(--pink-main);
             text-decoration: none;
-            font-size: 14px;
+            font-size: 13px;
             font-weight: 500;
             border-bottom: 1px dashed var(--pink-main);
             padding-bottom: 2px;
+            line-height: 1.4;
         }
 
         .btn-comprar:hover {
@@ -177,7 +181,7 @@
         }
 
         .mensagem-erro {
-            color: #ff4a4a;
+            color: #ff5555;
             font-size: 13px;
             margin-top: 10px;
             display: none;
@@ -191,11 +195,11 @@
         <p class="subtitle">Cartão Fidelidade Digital</p>
 
         <div class="grid-selos">
-            <div class="selo-espaco" id="espaco-1"><span class="coracao-vazio">♥</span><svg class="logo-selo" viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" fill="none" stroke="#121212" stroke-width="4"/><text x="50" y="55" font-family='Georgia' font-size="16" fill="#121212" font-weight="bold" text-anchor="middle">A.S</text></svg></div>
-            <div class="selo-espaco" id="espaco-2"><span class="coracao-vazio">♥</span><svg class="logo-selo" viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" fill="none" stroke="#121212" stroke-width="4"/><text x="50" y="55" font-family='Georgia' font-size="16" fill="#121212" font-weight="bold" text-anchor="middle">A.S</text></svg></div>
-            <div class="selo-espaco" id="espaco-3"><span class="coracao-vazio">♥</span><svg class="logo-selo" viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" fill="none" stroke="#121212" stroke-width="4"/><text x="50" y="55" font-family='Georgia' font-size="16" fill="#121212" font-weight="bold" text-anchor="middle">A.S</text></svg></div>
-            <div class="selo-espaco" id="espaco-4"><span class="coracao-vazio">♥</span><svg class="logo-selo" viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" fill="none" stroke="#121212" stroke-width="4"/><text x="50" y="55" font-family='Georgia' font-size="16" fill="#121212" font-weight="bold" text-anchor="middle">A.S</text></svg></div>
-            <div class="selo-espaco" id="espaco-5"><span class="coracao-vazio">♥</span><svg class="logo-selo" viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" fill="none" stroke="#121212" stroke-width="4"/><text x="50" y="55" font-family='Georgia' font-size="16" fill="#121212" font-weight="bold" text-anchor="middle">A.S</text></svg></div>
+            <div class="selo-espaco" id="espaco-1"><span class="coracao-vazio">♥</span><svg class="logo-selo" viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" fill="none" stroke="#121212" stroke-width="4"/><text x="50" y="55" font-family='Georgia' font-size="16" fill="#121212" font-weight="bold" font-style="italic" text-anchor="middle">A.S</text></svg></div>
+            <div class="selo-espaco" id="espaco-2"><span class="coracao-vazio">♥</span><svg class="logo-selo" viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" fill="none" stroke="#121212" stroke-width="4"/><text x="50" y="55" font-family='Georgia' font-size="16" fill="#121212" font-weight="bold" font-style="italic" text-anchor="middle">A.S</text></svg></div>
+            <div class="selo-espaco" id="espaco-3"><span class="coracao-vazio">♥</span><svg class="logo-selo" viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" fill="none" stroke="#121212" stroke-width="4"/><text x="50" y="55" font-family='Georgia' font-size="16" fill="#121212" font-weight="bold" font-style="italic" text-anchor="middle">A.S</text></svg></div>
+            <div class="selo-espaco" id="espaco-4"><span class="coracao-vazio">♥</span><svg class="logo-selo" viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" fill="none" stroke="#121212" stroke-width="4"/><text x="50" y="55" font-family='Georgia' font-size="16" fill="#121212" font-weight="bold" font-style="italic" text-anchor="middle">A.S</text></svg></div>
+            <div class="selo-espaco" id="espaco-5"><span class="coracao-vazio">♥</span><svg class="logo-selo" viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" fill="none" stroke="#121212" stroke-width="4"/><text x="50" y="55" font-family='Georgia' font-size="16" fill="#121212" font-weight="bold" font-style="italic" text-anchor="middle">A.S</text></svg></div>
         </div>
 
         <div id="div-validacao">
@@ -212,17 +216,15 @@
         </div>
 
         <br>
-        <a href="https://aesgourmet.my.canva.site/asgourmert-" target="_blank" class="btn-comprar">
-            Deseja ganhar mais um selo? Faça seu próximo pedido aqui! 🛍️
+        <a href="https://aesgourmet.my.canva.site/?utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAZXh0bgNhZW0CMTEAc3J0YwZhcHBfaWQPNTY3MDY3MzQzMzUyNDI3AAGnk3LoxsHOiYcKwpDEEBk9_qrKTChtjh5MkbN2EvVHZpZY8_DmR_3dOKSPVtk_aem_YWdncwDKAanYqxHKM59scFGrSLcY&brid=YWdncwHlScVUrELqGYhV9O_5Z8pi" target="_blank" class="btn-comprar">
+            Complete os 5 espaços e ganhe um benefício especial!<br>Faça seu próximo pedido aqui! 🛍️
         </a>
     </div>
 
     <script>
-        // Configurações principais
         const PALAVRA_SECRETA = "ASG"; 
-        const WHATSAPP_DONA = "5532988282328"; // Seu número atualizado com o código do Brasil (55)
+        const WHATSAPP_DONA = "5532988282328"; 
 
-        // Carregar selos já salvos ao abrir a página
         let selosAtuais = parseInt(localStorage.getItem('selos_asgourmet')) || 0;
         atualizarVisualSelos();
 
@@ -243,28 +245,21 @@
                 return;
             }
 
-            // Transforma a dataAAAA-MM-DD em DDMM
             const partesData = dataInput.split('-');
             const dia = partesData[2];
             const mes = partesData[1];
             
-            // Monta o código esperado (Ex: 1206ASG)
             const codigoCorretoEsperado = dia + mes + PALAVRA_SECRETA;
 
-            // Validação sem diferenciar maiúsculas/minúsculas
             if (codigoInput.toUpperCase() === codigoCorretoEsperado.toUpperCase()) {
                 erroMsg.style.display = "none";
                 selosAtuais++;
                 localStorage.setItem('selos_asgourmet', selosAtuais);
                 atualizarVisualSelos();
 
-                // Limpa os campos
                 document.getElementById('codigoValidacao').value = "";
-                
-                // Formata a data para a mensagem do Whats (DD/MM/AAAA)
                 const dataFormatada = `${dia}/${mes}/${partesData[0]}`;
 
-                // Avisa a dona no WhatsApp
                 setTimeout(() => {
                     const textoWhats = encodeURIComponent(`Olá, A.S Gourmet! Acabei de registrar uma compra no meu Cartão Fidelidade Digital! 🌸\nData do Pedido: ${dataFormatada}\nCódigo Usado: ${codigoInput}\nQuantidade de Selos Atuais: ${selosAtuais}/5`);
                     window.open(`https://api.whatsapp.com/send?phone=${WHATSAPP_DONA}&text=${textoWhats}`, '_blank');
