@@ -28,259 +28,211 @@
             align-items: center;
             justify-content: center;
             min-height: 100vh;
-            padding: 20px;
+            padding: 20px 10px;
         }
 
-        .container {
-            max-width: 450px;
-            width: 100%;
+        .card {
             background: var(--card-bg);
             border: 2px solid var(--pink-main);
-            border-radius: 15px;
-            padding: 25px;
-            box-shadow: 0px 10px 25px rgba(226, 159, 176, 0.1);
+            border-radius: 20px;
+            padding: 30px 20px;
+            width: 100%;
+            max-width: 380px;
             text-align: center;
+            box-shadow: 0px 10px 25px rgba(226, 159, 176, 0.1);
         }
 
-        h1 {
+        .logo-area h1 {
+            font-family: 'Georgia', serif;
             font-size: 32px;
             color: var(--pink-main);
-            margin-bottom: 5px;
-            font-family: 'Georgia', serif;
             letter-spacing: 2px;
             font-style: italic;
         }
 
-        .subtitle {
-            font-size: 13px;
-            color: #aaa;
-            margin-bottom: 25px;
+        .logo-area p {
+            font-size: 11px;
             text-transform: uppercase;
-            letter-spacing: 2px;
+            letter-spacing: 3px;
+            color: #aaa;
+            margin-top: 5px;
         }
 
-        /* Área dos Selos inspirada no Cartão Físico */
+        .slogan {
+            font-size: 13px;
+            color: #ccc;
+            margin: 20px 0;
+            line-height: 1.4;
+            font-style: italic;
+        }
+
         .grid-selos {
             display: flex;
-            justify-content: space-between;
-            margin-bottom: 30px;
-            gap: 8px;
+            justify-content: center;
+            gap: 12px;
+            margin: 25px 0;
+            flex-wrap: wrap;
         }
 
-        .selo-espaco {
-            width: 70px;
-            height: 70px;
+        .selo {
+            width: 55px;
+            height: 55px;
+            border: 2px dashed #333;
             border-radius: 50%;
-            border: 2px solid var(--pink-main);
             display: flex;
             align-items: center;
             justify-content: center;
-            position: relative;
-            background: #fffdfd;
-            transition: all 0.5s ease;
-        }
-
-        .selo-ativo {
-            background: var(--pink-main);
-            box-shadow: 0 0 15px var(--pink-main);
-            animation: popSelo 0.5s ease-in-out;
-        }
-
-        .logo-selo {
-            width: 75%;
-            height: 75%;
-            display: none;
-        }
-
-        .selo-ativo .logo-selo {
-            display: block;
-        }
-
-        .coracao-vazio {
-            color: #e29fb0;
             font-size: 24px;
+            background: #1a1a1a;
+            transition: all 0.4s ease;
         }
 
-        .selo-ativo .coracao-vazio {
-            display: none;
+        .selo.ativo {
+            border-style: solid;
+            border-color: var(--pink-main);
+            background: rgba(226, 159, 176, 0.1);
+            animation: pop 0.3s ease-in-out;
         }
 
-        @keyframes popSelo {
-            0% { transform: scale(0); }
-            80% { transform: scale(1.2); }
+        @keyframes pop {
+            0% { transform: scale(0.8); }
+            50% { transform: scale(1.1); }
             100% { transform: scale(1); }
         }
 
-        /* Formulário */
-        .form-grupo {
-            margin-bottom: 15px;
-            text-align: left;
-        }
-
-        label {
-            display: block;
-            font-size: 11px;
+        .btn-ganhar {
+            background: transparent;
+            border: 1px solid var(--pink-main);
             color: var(--pink-main);
-            margin-bottom: 5px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        input {
-            width: 100%;
-            padding: 12px;
-            background: #1c1c1c;
-            border: 1px solid #333;
-            border-radius: 8px;
-            color: white;
-            font-size: 14px;
-            outline: none;
-            transition: 0.3s;
-        }
-
-        input:focus {
-            border-color: var(--pink-main);
-        }
-
-        button {
-            width: 100%;
-            padding: 14px;
-            background: var(--pink-main);
-            border: none;
-            border-radius: 8px;
-            color: #121212;
-            font-weight: bold;
-            font-size: 15px;
+            padding: 10px 20px;
+            border-radius: 30px;
+            font-size: 13px;
             cursor: pointer;
-            transition: 0.3s;
+            font-weight: 600;
             margin-top: 10px;
             text-transform: uppercase;
             letter-spacing: 1px;
         }
 
-        button:hover {
-            background: var(--pink-dark);
-        }
-
-        /* Links e Infos */
         .btn-comprar {
             display: inline-block;
-            margin-top: 25px;
-            color: var(--pink-main);
+            width: 100%;
+            background: var(--pink-main);
+            color: #121212;
+            padding: 15px;
+            border-radius: 12px;
+            font-weight: bold;
+            font-size: 15px;
             text-decoration: none;
-            font-size: 13px;
-            font-weight: 500;
-            border-bottom: 1px dashed var(--pink-main);
-            padding-bottom: 2px;
-            line-height: 1.4;
+            margin-top: 25px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: background 0.3s;
         }
 
         .btn-comprar:hover {
-            color: white;
-            border-color: white;
+            background: var(--pink-dark);
         }
 
-        .mensagem-erro {
-            color: #ff5555;
-            font-size: 13px;
-            margin-top: 10px;
-            display: none;
+        .regras {
+            font-size: 11px;
+            color: #666;
+            margin-top: 20px;
+            line-height: 1.4;
         }
     </style>
 </head>
 <body>
 
-    <div class="container">
-        <h1>A.S Gourmet</h1>
-        <p class="subtitle">Cartão Fidelidade Digital</p>
+    <div class="card">
+        <div class="logo-area">
+            <h1>A.S Gourmet</h1>
+            <p>Cartão Fidelidade</p>
+        </div>
+
+        <p class="slogan">
+            "Assim como um anagrama transforma letras em algo novo, eu transformo a sua pele em arte... e o seu dia em doçura." ᯓ★
+        </p>
 
         <div class="grid-selos">
-            <div class="selo-espaco" id="espaco-1"><span class="coracao-vazio">♥</span><svg class="logo-selo" viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" fill="none" stroke="#121212" stroke-width="4"/><text x="50" y="55" font-family='Georgia' font-size="16" fill="#121212" font-weight="bold" font-style="italic" text-anchor="middle">A.S</text></svg></div>
-            <div class="selo-espaco" id="espaco-2"><span class="coracao-vazio">♥</span><svg class="logo-selo" viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" fill="none" stroke="#121212" stroke-width="4"/><text x="50" y="55" font-family='Georgia' font-size="16" fill="#121212" font-weight="bold" font-style="italic" text-anchor="middle">A.S</text></svg></div>
-            <div class="selo-espaco" id="espaco-3"><span class="coracao-vazio">♥</span><svg class="logo-selo" viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" fill="none" stroke="#121212" stroke-width="4"/><text x="50" y="55" font-family='Georgia' font-size="16" fill="#121212" font-weight="bold" font-style="italic" text-anchor="middle">A.S</text></svg></div>
-            <div class="selo-espaco" id="espaco-4"><span class="coracao-vazio">♥</span><svg class="logo-selo" viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" fill="none" stroke="#121212" stroke-width="4"/><text x="50" y="55" font-family='Georgia' font-size="16" fill="#121212" font-weight="bold" font-style="italic" text-anchor="middle">A.S</text></svg></div>
-            <div class="selo-espaco" id="espaco-5"><span class="coracao-vazio">♥</span><svg class="logo-selo" viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" fill="none" stroke="#121212" stroke-width="4"/><text x="50" y="55" font-family='Georgia' font-size="16" fill="#121212" font-weight="bold" font-style="italic" text-anchor="middle">A.S</text></svg></div>
+            <div class="selo" id="selo-1">🖤</div>
+            <div class="selo" id="selo-2">🖤</div>
+            <div class="selo" id="selo-3">🖤</div>
+            <div class="selo" id="selo-4">🖤</div>
+            <div class="selo" id="selo-5">🖤</div>
         </div>
 
-        <div id="div-validacao">
-            <div class="form-grupo">
-                <label for="dataPedido">Data do Pedido</label>
-                <input type="date" id="dataPedido">
-            </div>
-            <div class="form-grupo">
-                <label for="codigoValidacao">Código de Validação</label>
-                <input type="text" id="codigoValidacao" placeholder="Ex: 1506ASG" autocomplete="off">
-            </div>
-            <button onclick="validarSelo()">Garantir Meu Selo ♥</button>
-            <p class="mensagem-erro" id="erroMsg">Código incorreto! Verifique com a A.S Gourmet.</p>
-        </div>
+        <button class="btn-ganhar" onclick="validarCodigo()">Validar Código Secreto</button>
 
-        <br>
-        <a href="https://aesgourmet.my.canva.site/?utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAZXh0bgNhZW0CMTEAc3J0YwZhcHBfaWQPNTY3MDY3MzQzMzUyNDI3AAGnk3LoxsHOiYcKwpDEEBk9_qrKTChtjh5MkbN2EvVHZpZY8_DmR_3dOKSPVtk_aem_YWdncwDKAanYqxHKM59scFGrSLcY&brid=YWdncwHlScVUrELqGYhV9O_5Z8pi" target="_blank" class="btn-comprar">
-            Complete os 5 espaços e ganhe um benefício especial!<br>Faça seu próximo pedido aqui! 🛍️
+        <a href="https://aesgourmet01.my.canva.site/" class="btn-comprar" target="_blank">
+            Faça seu próximo pedido aqui! 🛍️
         </a>
+
+        <div class="regras">
+            A cada pedido ganhe 1 selo.<br>
+            Completando os 5 selos, ganhe um benefício exclusivo!
+        </div>
     </div>
 
     <script>
-        const PALAVRA_SECRETA = "ASG"; 
-        const WHATSAPP_DONA = "5532988282328"; 
+        // Códigos secretos que você pode dar para as clientes pontuarem
+        const codigosValidos = {
+            "DOCE10": 1,
+            "AMOR02": 2,
+            "VALE03": 3,
+            "BRINDE04": 4,
+            "FIM05": 5
+        };
 
-        let selosAtuais = parseInt(localStorage.getItem('selos_asgourmet')) || 0;
-        atualizarVisualSelos();
-
-        function validarSelo() {
-            const dataInput = document.getElementById('dataPedido').value;
-            const codigoInput = document.getElementById('codigoValidacao').value.trim();
-            const erroMsg = document.getElementById('erroMsg');
-
-            if (!dataInput || !codigoInput) {
-                erroMsg.textContent = "Por favor, preencha a data e o código.";
-                erroMsg.style.display = "block";
-                return;
-            }
-
-            if (selosAtuais >= 5) {
-                erroMsg.textContent = "Você já completou seus 5 selos! Parabéns!";
-                erroMsg.style.display = "block";
-                return;
-            }
-
-            const partesData = dataInput.split('-');
-            const dia = partesData[2];
-            const mes = partesData[1];
+        function atualizarVisualCartao() {
+            let progressoAtual = parseInt(localStorage.getItem('as_gourmet_selos')) || 0;
             
-            const codigoCorretoEsperado = dia + mes + PALAVRA_SECRETA;
-
-            if (codigoInput.toUpperCase() === codigoCorretoEsperado.toUpperCase()) {
-                erroMsg.style.display = "none";
-                selosAtuais++;
-                localStorage.setItem('selos_asgourmet', selosAtuais);
-                atualizarVisualSelos();
-
-                document.getElementById('codigoValidacao').value = "";
-                const dataFormatada = `${dia}/${mes}/${partesData[0]}`;
-
-                setTimeout(() => {
-                    const textoWhats = encodeURIComponent(`Olá, A.S Gourmet! Acabei de registrar uma compra no meu Cartão Fidelidade Digital! 🌸\nData do Pedido: ${dataFormatada}\nCódigo Usado: ${codigoInput}\nQuantidade de Selos Atuais: ${selosAtuais}/5`);
-                    window.open(`https://api.whatsapp.com/send?phone=${WHATSAPP_DONA}&text=${textoWhats}`, '_blank');
-                }, 800);
-
-            } else {
-                erroMsg.textContent = "Código incorreto! Verifique com a A.S Gourmet.";
-                erroMsg.style.display = "block";
-            }
-        }
-
-        function atualizarVisualSelos() {
             for (let i = 1; i <= 5; i++) {
-                const espaco = document.getElementById(`espaco-${i}`);
-                if (i <= selosAtuais) {
-                    espaco.classList.add('selo-ativo');
+                const elementoSelo = document.getElementById(`selo-${i}`);
+                if (i <= progressoAtual) {
+                    elementoSelo.innerText = "💖";
+                    elementoSelo.classList.add('ativo');
                 } else {
-                    espaco.classList.remove('selo-ativo');
+                    elementoSelo.innerText = "🖤";
+                    elementoSelo.classList.remove('ativo');
                 }
             }
+
+            if (progressoAtual >= 5) {
+                setTimeout(() => {
+                    alert("🎉 PARABÉNS! Você completou seu cartão fidelidade! Print essa tela e envie para a A.S Gourmet para resgatar seu prêmio! 🎁");
+                }, 500);
+            }
         }
+
+        function validarCodigo() {
+            let progressoAtual = parseInt(localStorage.getItem('as_gourmet_selos')) || 0;
+
+            if (progressoAtual >= 5) {
+                alert("Você já completou este cartão! Resgate seu prêmio com a loja. 🥰");
+                return;
+            }
+
+            const codigoDigitado = prompt("Digite o código secreto enviado junto com seu pedido:").trim().toUpperCase();
+
+            if (codigosValidos[codigoDigitado]) {
+                let nivelDoCodigo = codigosValidos[codigoDigitado];
+
+                if (nivelDoCodigo <= progressoAtual) {
+                    alert("Esse código já foi utilizado ou você já passou dessa etapa! 😉");
+                } else if (nivelDoCodigo === progressoAtual + 1) {
+                    localStorage.setItem('as_gourmet_selos', nivelDoCodigo);
+                    alert("✨ Selo validado com sucesso! Parabéns! ✨");
+                    atualizarVisualCartao();
+                } else {
+                    alert("Ops! Você precisa validar os códigos na ordem certa dos seus pedidos. 😉");
+                }
+            } else {
+                alert("Código inválido! Verifique se digitou certinho ou fale com a gente. ❌");
+            }
+        }
+
+        window.onload = atualizarVisualCartao;
     </script>
 </body>
 </html>
