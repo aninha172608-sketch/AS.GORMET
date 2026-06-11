@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cartão Fidelidade - A.S Gourmet</title>
+    <style>
+        :root {
+            --bg-color: #121212;
+            --card-bg: #1a1a1a;
+            --pink-main: #f3a3b7;
+            --pink-dark: #d47a91;
+            --text-white: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-white);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 450px;
+            width: 100%;
+            background: var(--card-bg);
+            border: 2px solid var(--pink-main);
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0px 10px 25px rgba(243, 163, 183, 0.1);
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 28px;
+            color: var(--pink-main);
+            margin-bottom: 5px;
+            font-family: 'Georgia', serif;
+            letter-spacing: 2px;
+        }
+
+        .subtitle {
+            font-size: 14px;
+            color: #aaa;
+            margin-bottom: 25px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Área dos Selos */
+        .grid-selos {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 30px;
+            gap: 10px;
+        }
+
+        .selo-espaco {
+            width: 65px;
+            height: 65px;
+            border-radius: 50%;
+            border: 2px dashed var(--pink-main);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            background: #222;
+            transition: all 0.5s ease;
+        }
+
+        .selo-ativo {
+            border: 2px solid var(--pink-main);
+            background: var(--pink-main);
+            box-shadow: 0 0 15px var(--pink-main);
+            animation: popSelo 0.5s ease-in-out;
+        }
+
+        .logo-selo {
+            width: 80%;
+            height: 80%;
+            display: none;
+        }
+
+        .selo-ativo .logo-selo {
+            display: block;
+        }
+
+        .coracao-vazio {
+            color: #444;
+            font-size: 20px;
+        }
+
+        .selo-ativo .coracao-vazio {
+            display: none;
+        }
+
+        @keyframes popSelo {
+            0% { transform: scale(0); }
+            80% { transform: scale(1.2); }
+            100% { transform: scale(1); }
+        }
+
+        /* Formulário */
+        .form-grupo {
+            margin-bottom: 15px;
+            text-align: left;
+        }
+
+        label {
+            display: block;
+            font-size: 12px;
+            color: var(--pink-main);
+            margin-bottom: 5px;
+            text-transform: uppercase;
+        }
+
+        input {
+            width: 100%;
+            padding: 12px;
+            background: #222;
+            border: 1px solid #444;
+            border-radius: 8px;
+            color: white;
+            font-size: 14px;
+            outline: none;
+            transition: 0.3s;
+        }
+
+        input:focus {
+            border-color: var(--pink-main);
+        }
+
+        button {
+            width: 100%;
+            padding: 14px;
+            background: var(--pink-main);
+            border: none;
+            border-radius: 8px;
+            color: #121212;
+            font-weight: bold;
+            font-size: 16px;
+            cursor: pointer;
+            transition: 0.3s;
+            margin-top: 10px;
+        }
+
+        button:hover {
+            background: var(--pink-dark);
+        }
+
+        /* Links e Infos */
+        .btn-comprar {
+            display: inline-block;
+            margin-top: 25px;
+            color: var(--pink-main);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            border-bottom: 1px dashed var(--pink-main);
+            padding-bottom: 2px;
+        }
+
+        .btn-comprar:hover {
+            color: white;
+            border-color: white;
+        }
+
+        .mensagem-erro {
+            color: #ff4a4a;
+            font-size: 13px;
+            margin-top: 10px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>A.S Gourmet</h1>
+        <p class="subtitle">Cartão Fidelidade Digital</p>
+
+        <div class="grid-selos">
+            <div class="selo-espaco" id="espaco-1"><span class="coracao-vazio">♥</span><svg class="logo-selo" viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" fill="none" stroke="#121212" stroke-width="4"/><text x="50" y="55" font-family='Georgia' font-size="16" fill="#121212" font-weight="bold" text-anchor="middle">A.S</text></svg></div>
+            <div class="selo-espaco" id="espaco-2"><span class="coracao-vazio">♥</span><svg class="logo-selo" viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" fill="none" stroke="#121212" stroke-width="4"/><text x="50" y="55" font-family='Georgia' font-size="16" fill="#121212" font-weight="bold" text-anchor="middle">A.S</text></svg></div>
+            <div class="selo-espaco" id="espaco-3"><span class="coracao-vazio">♥</span><svg class="logo-selo" viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" fill="none" stroke="#121212" stroke-width="4"/><text x="50" y="55" font-family='Georgia' font-size="16" fill="#121212" font-weight="bold" text-anchor="middle">A.S</text></svg></div>
+            <div class="selo-espaco" id="espaco-4"><span class="coracao-vazio">♥</span><svg class="logo-selo" viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" fill="none" stroke="#121212" stroke-width="4"/><text x="50" y="55" font-family='Georgia' font-size="16" fill="#121212" font-weight="bold" text-anchor="middle">A.S</text></svg></div>
+            <div class="selo-espaco" id="espaco-5"><span class="coracao-vazio">♥</span><svg class="logo-selo" viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" fill="none" stroke="#121212" stroke-width="4"/><text x="50" y="55" font-family='Georgia' font-size="16" fill="#121212" font-weight="bold" text-anchor="middle">A.S</text></svg></div>
+        </div>
+
+        <div id="div-validacao">
+            <div class="form-grupo">
+                <label for="dataPedido">Data do Pedido</label>
+                <input type="date" id="dataPedido">
+            </div>
+            <div class="form-grupo">
+                <label for="codigoValidacao">Código de Validação</label>
+                <input type="text" id="codigoValidacao" placeholder="Ex: 1506ASG" autocomplete="off">
+            </div>
+            <button onclick="validarSelo()">Garantir Meu Selo ♥</button>
+            <p class="mensagem-erro" id="erroMsg">Código incorreto! Verifique com a A.S Gourmet.</p>
+        </div>
+
+        <br>
+        <a href="https://aesgourmet.my.canva.site/asgourmert-" target="_blank" class="btn-comprar">
+            Deseja ganhar mais um selo? Faça seu próximo pedido aqui! 🛍️
+        </a>
+    </div>
+
+    <script>
+        // Configurações principais
+        const PALAVRA_SECRETA = "ASG"; 
+        const WHATSAPP_DONA = "5532988282328"; // Seu número atualizado com o código do Brasil (55)
+
+        // Carregar selos já salvos ao abrir a página
+        let selosAtuais = parseInt(localStorage.getItem('selos_asgourmet')) || 0;
+        atualizarVisualSelos();
+
+        function validarSelo() {
+            const dataInput = document.getElementById('dataPedido').value;
+            const codigoInput = document.getElementById('codigoValidacao').value.trim();
+            const erroMsg = document.getElementById('erroMsg');
+
+            if (!dataInput || !codigoInput) {
+                erroMsg.textContent = "Por favor, preencha a data e o código.";
+                erroMsg.style.display = "block";
+                return;
+            }
+
+            if (selosAtuais >= 5) {
+                erroMsg.textContent = "Você já completou seus 5 selos! Parabéns!";
+                erroMsg.style.display = "block";
+                return;
+            }
+
+            // Transforma a dataAAAA-MM-DD em DDMM
+            const partesData = dataInput.split('-');
+            const dia = partesData[2];
+            const mes = partesData[1];
+            
+            // Monta o código esperado (Ex: 1206ASG)
+            const codigoCorretoEsperado = dia + mes + PALAVRA_SECRETA;
+
+            // Validação sem diferenciar maiúsculas/minúsculas
+            if (codigoInput.toUpperCase() === codigoCorretoEsperado.toUpperCase()) {
+                erroMsg.style.display = "none";
+                selosAtuais++;
+                localStorage.setItem('selos_asgourmet', selosAtuais);
+                atualizarVisualSelos();
+
+                // Limpa os campos
+                document.getElementById('codigoValidacao').value = "";
+                
+                // Formata a data para a mensagem do Whats (DD/MM/AAAA)
+                const dataFormatada = `${dia}/${mes}/${partesData[0]}`;
+
+                // Avisa a dona no WhatsApp
+                setTimeout(() => {
+                    const textoWhats = encodeURIComponent(`Olá, A.S Gourmet! Acabei de registrar uma compra no meu Cartão Fidelidade Digital! 🌸\nData do Pedido: ${dataFormatada}\nCódigo Usado: ${codigoInput}\nQuantidade de Selos Atuais: ${selosAtuais}/5`);
+                    window.open(`https://api.whatsapp.com/send?phone=${WHATSAPP_DONA}&text=${textoWhats}`, '_blank');
+                }, 800);
+
+            } else {
+                erroMsg.textContent = "Código incorreto! Verifique com a A.S Gourmet.";
+                erroMsg.style.display = "block";
+            }
+        }
+
+        function atualizarVisualSelos() {
+            for (let i = 1; i <= 5; i++) {
+                const espaco = document.getElementById(`espaco-${i}`);
+                if (i <= selosAtuais) {
+                    espaco.classList.add('selo-ativo');
+                } else {
+                    espaco.classList.remove('selo-ativo');
+                }
+            }
+        }
+    </script>
+</body>
+</html>
